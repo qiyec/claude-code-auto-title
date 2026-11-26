@@ -60,15 +60,15 @@ Or install manually — see [Manual Installation](#manual-installation).
 
 | type | When |
 |------|------|
-| `feat` | New feature development |
-| `fix` | Bug investigation & fix |
-| `test` | Testing & regression |
-| `plan` | Architecture & design |
-| `refactor` | Code refactoring |
-| `skill` | Tool & skill setup |
-| `agent` | Automation & agent tasks |
-| `docs` | Documentation |
-| `chore` | Config, env, misc |
+| `feat` | Feature development & implementation |
+| `fix` | Bug fix, debugging, error handling |
+| `test` | Writing tests, validation, regression |
+| `refactor` | Code refactoring & cleanup |
+| `docs` | Writing documentation & comments |
+| `research` | Tech research, concept learning, info lookup |
+| `plan` | Architecture design & technical planning |
+| `setup` | Environment config, tool install, dependencies |
+| `ops` | Automation scripts, deployment, ops tasks |
 
 ## Customization
 
