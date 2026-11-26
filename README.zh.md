@@ -60,6 +60,17 @@ Claude Code 从以下路径读取自定义标题：
 
 只要在第一条消息触发时写入这个文件，会话列表和顶部状态栏就会立即显示对应标题。
 
+## 前置条件
+
+| 条件 | 说明 |
+|---|---|
+| Claude Code | v2.x，CLI 或桌面版 |
+| Python | 3.9+（macOS/Linux 已预装） |
+| Anthropic API key | 仅 LLM 版需要，在环境变量或 `~/.claude/settings.json` 中配置 `ANTHROPIC_API_KEY` 或 `ANTHROPIC_AUTH_TOKEN` |
+| curl | 一键安装命令需要（macOS/Linux 已预装） |
+
+极简版（`--simple`）除 Python 和 Claude Code 外无额外依赖。
+
 ## 一键安装
 
 如果不想手动操作，可以直接运行安装脚本（自动创建脚本文件并注册 Hook，不会覆盖 settings.json 里的其他配置）：

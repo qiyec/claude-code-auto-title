@@ -31,6 +31,17 @@ Claude Code doesn't support auto-naming sessions yet ([issue #38856](https://git
 
 Writing this file on the first message is all it takes.
 
+## Prerequisites
+
+| Requirement | Details |
+|---|---|
+| Claude Code | v2.x, CLI or Desktop |
+| Python | 3.9+ (pre-installed on macOS/Linux) |
+| Anthropic API key | LLM version only — set `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` in env or `~/.claude/settings.json` |
+| curl | For one-liner install (pre-installed on macOS/Linux) |
+
+The lite version (`--simple`) has no extra dependencies beyond Python and Claude Code.
+
 ## Installation
 
 **Option A — LLM version** (structured `[type] title`, requires Anthropic API key):
