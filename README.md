@@ -58,6 +58,12 @@ bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa
 
 Or install manually — see [Manual Installation](#manual-installation).
 
+**Uninstall:**
+
+```bash
+bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/uninstall.sh)
+```
+
 ## Comparison
 
 |  | LLM version | Lite version |

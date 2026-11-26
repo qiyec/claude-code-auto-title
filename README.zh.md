@@ -83,6 +83,12 @@ bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa
 bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/install.sh) --simple
 ```
 
+**卸载：**
+
+```bash
+bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/uninstall.sh)
+```
+
 以下是手动安装步骤（方便了解实现细节或按需调整）。
 
 ## 实现步骤
