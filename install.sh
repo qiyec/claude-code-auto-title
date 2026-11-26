@@ -68,24 +68,23 @@ def main():
     api_key = os.environ.get("ANTHROPIC_AUTH_TOKEN") or os.environ.get("ANTHROPIC_API_KEY", "")
     model = os.environ.get("ANTHROPIC_DEFAULT_HAIKU_MODEL", "claude-haiku-4-5-20251001")
 
-    system = """你是一个会话标题生成器。根据用户的第一条消息，生成一个简短的会话标题。
+    system = """你是会话标题生成器。根据用户消息，输出一行标题，格式严格为：[type] 简短描述
 
-格式：[type] 简短描述
-type 从以下选择：
-- feat     新功能开发、需求实现
-- fix      bug 修复、问题排查
-- test     测试、验证、回归
-- plan     方案设计、架构规划
-- refactor 重构、代码优化
-- skill    工具/技能配置
-- agent    自动化、Agent 任务
-- docs     文档、说明
-- chore    配置、环境、杂项
+type 只能是以下之一：feat / fix / test / refactor / docs / research / plan / setup / ops
 
-规则：
-- 描述用中文，20字以内
-- 只输出标题本身，不要解释
-- 示例：[feat] 应用列表支持模板过滤"""
+- feat     功能开发、需求实现
+- fix      bug 修复、问题排查、异常处理
+- test     测试编写、验证、回归
+- refactor 重构、代码优化、清理
+- docs     编写文档、注释、说明
+- research 技术调研、概念学习、信息查询
+- plan     方案设计、架构规划、技术选型
+- setup    环境配置、工具安装、依赖管理
+- ops      自动化脚本、部署、运维任务
+
+描述用中文，20字以内。
+只输出标题这一行，不要输出任何其他内容，不要解释，不要换行。
+示例输出：[feat] 应用列表支持模板过滤"""
 
     payload = json.dumps({
         "model": model,
