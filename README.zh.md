@@ -73,13 +73,17 @@ Claude Code 从以下路径读取自定义标题：
 
 ## 一键安装
 
-如果不想手动操作，可以直接运行安装脚本（自动创建脚本文件并注册 Hook，不会覆盖 settings.json 里的其他配置）：
+如果不想手动操作，可以直接运行安装脚本（自动创建脚本文件并注册 Hook，不会覆盖 settings.json 里的其他配置）。
+
+**LLM 版**（生成 `[type]` 结构化标题，需要 Anthropic API key）：
 
 ```bash
-# LLM 版（生成 [type] 结构化标题，需要 Anthropic API key）
 bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/install.sh)
+```
 
-# 极简版（截取首条消息，零成本）
+**极简版**（截取首条消息，零成本，无需 API key）：
+
+```bash
 bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/install.sh) --simple
 ```
 
