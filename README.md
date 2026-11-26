@@ -35,6 +35,7 @@ Writing this file on the first message is all it takes.
 
 | Requirement | Details |
 |---|---|
+| OS | macOS or Linux (Windows: WSL or Git Bash only) |
 | Claude Code | v2.x, CLI or Desktop |
 | Python | 3.9+ (pre-installed on macOS/Linux) |
 | Anthropic API key | LLM version only — set `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` in env or `~/.claude/settings.json` |
@@ -147,7 +148,9 @@ rm -rf /tmp/test /tmp/test.jsonl
 
 | Environment | Status |
 |---|---|
-| Claude Code CLI / Desktop | ✅ Supported |
+| macOS / Linux — Claude Code CLI or Desktop | ✅ Supported |
+| Windows — WSL or Git Bash | ✅ Supported |
+| Windows — cmd / PowerShell (native) | ✗ Not supported |
 | Claude.ai web | ✗ Not needed (already has auto-title) |
 | Cursor / Windsurf / other editors | ✗ Not applicable |
 

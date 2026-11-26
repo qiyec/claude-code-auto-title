@@ -64,6 +64,7 @@ Claude Code 从以下路径读取自定义标题：
 
 | 条件 | 说明 |
 |---|---|
+| 操作系统 | macOS 或 Linux（Windows 需在 WSL 或 Git Bash 下运行） |
 | Claude Code | v2.x，CLI 或桌面版 |
 | Python | 3.9+（macOS/Linux 已预装） |
 | Anthropic API key | 仅 LLM 版需要，在环境变量或 `~/.claude/settings.json` 中配置 `ANTHROPIC_API_KEY` 或 `ANTHROPIC_AUTH_TOKEN` |
