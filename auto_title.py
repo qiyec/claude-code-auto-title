@@ -9,10 +9,8 @@ import urllib.request
 import tempfile
 
 def main():
-    if len(sys.argv) < 2:
-        return
     try:
-        data = json.loads(sys.argv[1])
+        data = json.load(sys.stdin)
     except Exception:
         return
 
@@ -36,9 +34,8 @@ def main():
     model = os.environ.get("ANTHROPIC_DEFAULT_HAIKU_MODEL", "claude-haiku-4-5-20251001")
 
     system = (
-        "你是一个会话标题生成器。根据用户的第一条消息，生成一个简短的会话标题。\n\n"
-        "格式：[type] 简短描述\n"
-        "type 从以下选择：\n"
+        "你是会话标题生成器。根据用户消息，输出一行标题，格式严格为：[type] 简短描述\n\n"
+        "type 只能是以下之一：feat / fix / test / plan / refactor / skill / agent / docs / chore\n\n"
         "- feat     新功能开发、需求实现\n"
         "- fix      bug 修复、问题排查\n"
         "- test     测试、验证、回归\n"
@@ -48,15 +45,14 @@ def main():
         "- agent    自动化、Agent 任务\n"
         "- docs     文档、说明\n"
         "- chore    配置、环境、杂项\n\n"
-        "规则：\n"
-        "- 描述用中文，20字以内\n"
-        "- 只输出标题本身，不要解释\n"
-        "- 示例：[feat] 应用列表支持模板过滤"
+        "描述用中文，20字以内。\n"
+        "只输出标题这一行，不要输出任何其他内容，不要解释，不要换行。\n"
+        "示例输出：[feat] 应用列表支持模板过滤"
     )
 
     payload = json.dumps({
         "model": model,
-        "max_tokens": 30,
+        "max_tokens": 50,
         "system": system,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
