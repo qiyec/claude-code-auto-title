@@ -1,5 +1,7 @@
 # Claude Code 会话自动命名：用 Hook 实现 AI 生成标题
 
+[English](README.md)
+
 > **适用范围**：本文方案仅适用于 **Claude Code（CLI 及桌面版）**，依赖其专有的 Hook 系统和本地会话存储格式，不适用于 Cursor、Windsurf 等其他 AI 编辑器，也不需要用于已原生支持自动命名的 Claude.ai 网页版。
 
 Claude Code 目前不支持自动命名会话（GitHub issue [#38856](https://github.com/anthropics/claude-code/issues/38856) 仍处于 open 状态），每次新建会话都是默认的 "New Conversation"，翻历史记录时完全不知道每个会话在做什么。
