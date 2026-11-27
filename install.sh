@@ -9,7 +9,7 @@
 
 set -euo pipefail
 
-GIST_RAW="https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw"
+RAW_BASE="https://raw.githubusercontent.com/qiyec/claude-code-auto-title/main"
 HOOK_DIR="$HOME/.claude/hooks"
 SETTINGS="$HOME/.claude/settings.json"
 MODE="llm"
@@ -23,10 +23,10 @@ echo "Installing Claude Code auto-title hook (${MODE} mode)..."
 # 1. Create hooks directory
 mkdir -p "$HOOK_DIR"
 
-# 2. Download scripts from Gist
-curl -fsSL "$GIST_RAW/auto-title.sh" -o "$HOOK_DIR/auto-title.sh"
-curl -fsSL "$GIST_RAW/auto_title.py" -o "$HOOK_DIR/auto_title.py"
-curl -fsSL "$GIST_RAW/auto_title_simple.py" -o "$HOOK_DIR/auto_title_simple.py"
+# 2. Download scripts from repository
+curl -fsSL "$RAW_BASE/auto-title.sh" -o "$HOOK_DIR/auto-title.sh"
+curl -fsSL "$RAW_BASE/auto_title.py" -o "$HOOK_DIR/auto_title.py"
+curl -fsSL "$RAW_BASE/auto_title_simple.py" -o "$HOOK_DIR/auto_title_simple.py"
 
 # 3. Switch entry point for simple mode
 if [ "$MODE" = "simple" ]; then

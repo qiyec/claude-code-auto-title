@@ -48,13 +48,13 @@ The lite version (`--simple`) has no extra dependencies beyond Python and Claude
 **Option A — LLM version** (structured `[type] title`, requires Anthropic API key):
 
 ```bash
-bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/qiyec/claude-code-auto-title/main/install.sh)
 ```
 
 **Option B — Lite version** (truncates first message, zero cost, no API call):
 
 ```bash
-bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/install.sh) --simple
+bash <(curl -fsSL https://raw.githubusercontent.com/qiyec/claude-code-auto-title/main/install.sh) --simple
 ```
 
 Or install manually — see [Manual Installation](#manual-installation).
@@ -62,7 +62,7 @@ Or install manually — see [Manual Installation](#manual-installation).
 **Uninstall:**
 
 ```bash
-bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/uninstall.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/qiyec/claude-code-auto-title/main/uninstall.sh)
 ```
 
 ## Comparison

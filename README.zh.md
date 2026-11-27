@@ -64,19 +64,19 @@ Claude Code 从以下路径读取自定义标题：
 **LLM 版**（生成 `[type]` 结构化标题，需要 Anthropic API key）：
 
 ```bash
-bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/qiyec/claude-code-auto-title/main/install.sh)
 ```
 
 **极简版**（截取首条消息，零成本，无需 API key）：
 
 ```bash
-bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/install.sh) --simple
+bash <(curl -fsSL https://raw.githubusercontent.com/qiyec/claude-code-auto-title/main/install.sh) --simple
 ```
 
 **卸载：**
 
 ```bash
-bash <(curl -fsSL https://gist.github.com/qiyec/71e742075a11493a4c2c68a9bf88daaa/raw/uninstall.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/qiyec/claude-code-auto-title/main/uninstall.sh)
 ```
 
 手动安装步骤见 [手动安装](#手动安装)。
