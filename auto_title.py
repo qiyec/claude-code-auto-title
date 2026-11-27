@@ -16,9 +16,10 @@ def main():
 
     session_id = data.get("session_id", "")
     transcript_path = data.get("transcript_path", "")
-    prompt = data.get("prompt", "")[:500]
+    prompt = data.get("prompt", "").strip()[:500]
 
-    if not session_id or not transcript_path:
+    # 空消息（如纯图片）跳过
+    if not session_id or not transcript_path or len(prompt) < 5:
         return
 
     session_dir = transcript_path.removesuffix(".jsonl")
@@ -70,7 +71,8 @@ def main():
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             result = json.loads(resp.read())
-        title = result["content"][0]["text"].strip()
+        # 只取第一行，防止 LLM 多输出内容混进标题
+        title = result["content"][0]["text"].strip().splitlines()[0].strip()
     except Exception:
         return
 
