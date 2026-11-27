@@ -76,7 +76,11 @@ def main():
     except Exception:
         return
 
-    if not title:
+    # 格式校验：必须是 [type] 描述 的形式，否则丢弃
+    valid_types = {"feat", "fix", "test", "refactor", "docs", "research", "plan", "setup", "ops"}
+    import re
+    m = re.match(r"^\[([a-z]+)\]\s+\S", title)
+    if not m or m.group(1) not in valid_types:
         return
 
     tmp = tempfile.NamedTemporaryFile(
