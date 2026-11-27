@@ -53,7 +53,8 @@ def main():
 
     payload = json.dumps({
         "model": model,
-        "max_tokens": 50,
+        # 推理模型会先输出 thinking 块，50 token 不够用，全部会被思考吃掉
+        "max_tokens": 512,
         "system": system,
         "messages": [{"role": "user", "content": prompt}]
     }).encode()
@@ -69,11 +70,20 @@ def main():
     )
 
     try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        with urllib.request.urlopen(req, timeout=20) as resp:
             result = json.loads(resp.read())
-        # 只取第一行，防止 LLM 多输出内容混进标题
-        title = result["content"][0]["text"].strip().splitlines()[0].strip()
     except Exception:
+        return
+
+    # 推理模型（DeepSeek 等）可能先返回 thinking 块，text 在后面的块里；
+    # 不能假定 content[0] 就是 text
+    title = ""
+    for block in result.get("content", []):
+        if block.get("type") == "text" and block.get("text", "").strip():
+            # 只取第一行，防止 LLM 多输出内容混进标题
+            title = block["text"].strip().splitlines()[0].strip()
+            break
+    if not title:
         return
 
     # 格式校验：必须是 [type] 描述 的形式，否则丢弃
